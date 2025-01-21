@@ -1,0 +1,29 @@
+// Exercise 1: Guess the number
+// Prize Amount: Rs 500 Amazon voucher
+
+// Function to generate a random number between 1 and 100
+let number = Math.floor(Math.random() * 100) + 1; 
+
+let chances = 0;
+let guessedNumber = 0;
+
+// Keep asking the user for the number until the correct number is guessed
+while (guessedNumber !== number) {
+    // Ask user for their guess
+    guessedNumber = parseInt(prompt("Guess the number (between 1 and 100): "), 10);
+
+    // Increment the chances
+    chances++;
+
+    // Provide feedback to the user
+    if (guessedNumber < number) {
+        console.log("The number is higher. Try again!");
+    } else if (guessedNumber > number) {
+        console.log("The number is lower. Try again!");
+    }
+}
+
+// Game over, correct number is guessed
+console.log(`Congratulations! You've guessed the number in ${chances} chances.`);
+console.log(`Your score is: ${100 - chances}`);
+console.log(`The actual number was: ${number}`);
